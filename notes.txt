@@ -1,0 +1,29 @@
+Installation instructions:
+frontend_service.git\docs\install
+
+Detach mode (that what -d means)
+$ docker up -d
+$ docker ps -a
+$ docker-machine env
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="C:\Users\Alex\.docker\machine\machines\default"
+export DOCKER_MACHINE_NAME="default"
+export COMPOSE_CONVERT_WINDOWS_PATHS="true"
+# Run this command to configure your shell:
+# eval $("C:\Programs\DockerToolbox\docker-machine.exe" env)
+$ docker images
+
+http://192.168.99.100/
+
+
+Stop[ the fronend container, remove the network that runs it, and remove its image
+$ docker-compose down -v --rm='all'
+
+We will be using docker-compose.deploy.yml which defines all of the services at once.
+$ docker-compose -f docker-compose.deploy.yml up -d
+
+
+https://github.com/PacktPublishing/Hands-on-Microservices-with-Python-Product-Service/blob/master/docs/install/install.md
+$ docker ps -a
+$ docker exec -i frontend_servicegit_product_1 python add_products.py

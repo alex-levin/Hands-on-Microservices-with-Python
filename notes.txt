@@ -1,8 +1,9 @@
 Installation instructions:
 frontend_service.git\docs\install
 
-Detach mode (that what -d means)
-$ docker up -d
+Detach mode (that what -d means).
+Install only front-end service:
+$ docker-compose up -d
 $ docker ps -a
 $ docker-machine env
 export DOCKER_TLS_VERIFY="1"
@@ -26,4 +27,11 @@ $ docker-compose -f docker-compose.deploy.yml up -d
 
 https://github.com/PacktPublishing/Hands-on-Microservices-with-Python-Product-Service/blob/master/docs/install/install.md
 $ docker ps -a
+To populate products database table:
 $ docker exec -i frontend_servicegit_product_1 python add_products.py
+
+https://github.com/pypa/setuptools/issues/2017
+Added && pip install setuptools==45 \ to avoid errors
+
+Remove all images and containers:
+docker system prune
